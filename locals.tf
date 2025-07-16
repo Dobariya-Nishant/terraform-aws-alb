@@ -1,5 +1,5 @@
 locals {
-  name = "${var.name}-${var.environment}"
+  name = "${var.name}-alb-${var.environment}"
   listener_rules = flatten([
     for listener_key, listener in var.listeners : [
       for rule in lookup(listener, "rules", []) : {
